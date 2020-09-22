@@ -1,5 +1,5 @@
 export default {
-  title: 'Event',
+  title: 'Evento',
   name: 'event',
   type: 'document',
   fields: [
@@ -7,6 +7,12 @@ export default {
       title: 'Titulo',
       name: 'title',
       type: 'string',
+    },
+    {
+      title: 'Categoria',
+      name: 'category',
+      type: 'reference',
+      to: [{ type: 'category' }],
     },
     {
       title: 'Cover',
