@@ -16,15 +16,21 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [
     {
       "name": "part:@sanity/base/schema",
-      "path": "./schemas/schema"
+      "path": "./src/schemas/schema"
+    },
+    {
+      "implements": "part:@sanity/base/brand-logo",
+      "path": "./src/components/Logo"
+    },
+    {
+      "implements": "part:@sanity/base/theme/variables/override-style",
+      "path": "./src/styles/variables.css"
     }
   ]
 }

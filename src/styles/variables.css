@@ -1,0 +1,16 @@
+/* ./styles/variables.css */
+
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+
+:root {
+  /* Brand colors */
+  --brand-primary: #00c39d;
+  --brand-primary--inverted: #ffffff;
+  --brand-secondary: #e49963;
+  --brand-secondary--inverted: #342e29;
+
+  /* Typography */
+  --font-family-sans-serif: 'Inter';
+  --font-size-base: 16px;
+  --text-color: #171a19;
+}
