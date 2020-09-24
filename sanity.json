@@ -12,7 +12,8 @@
     "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "@sanity/production-preview"
   ],
   "env": {
     "development": {
@@ -31,6 +32,10 @@
     {
       "implements": "part:@sanity/base/theme/variables/override-style",
       "path": "./src/styles/variables.css"
+    },
+    {
+      "implements": "part:@sanity/production-preview/resolve-production-url",
+      "path": "./src/lib/resolveProductionUrl.ts"
     }
   ]
 }
