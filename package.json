@@ -17,9 +17,11 @@
     "@sanity/desk-tool": "^1.150.8",
     "@sanity/production-preview": "^1.150.1",
     "@sanity/vision": "^1.150.6",
+    "date-fns": "^2.16.1",
     "prop-types": "^15.6",
     "react": "^16.2",
-    "react-dom": "^16.2"
+    "react-dom": "^16.2",
+    "react-icons": "^3.11.0"
   },
   "devDependencies": {
     "@types/react": "^16.9.49",

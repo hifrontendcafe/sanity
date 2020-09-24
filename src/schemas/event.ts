@@ -1,7 +1,11 @@
+import { MdEventSeat } from 'react-icons/md';
+import { format } from 'date-fns';
+
 export default {
   title: 'Evento',
   name: 'event',
   type: 'document',
+  icon: MdEventSeat,
   fields: [
     {
       title: 'Titulo',
@@ -62,6 +66,37 @@ export default {
           to: [{ type: 'tag' }],
         },
       ],
+    },
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      date: 'date',
+      cover: 'cover',
+    },
+    prepare({ title, date, cover }) {
+      return {
+        title,
+        subtitle: format(new Date(date), 'MMM d - HH:mm'),
+        media: cover,
+      };
+    },
+  },
+  orderings: [
+    {
+      title: 'Date, New',
+      name: 'dateDesc',
+      by: [{ field: 'date', direction: 'desc' }],
+    },
+    {
+      title: 'Date, Old',
+      name: 'dateAsc',
+      by: [{ field: 'date', direction: 'asc' }],
+    },
+    {
+      title: 'Title',
+      name: 'titleAsc',
+      by: [{ field: 'title', direction: 'asc' }],
     },
   ],
 };
