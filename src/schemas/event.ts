@@ -67,6 +67,12 @@ export default {
         },
       ],
     },
+    {
+      title: 'Grabacion',
+      name: 'recording',
+      type: 'url',
+      description: 'URL del evento grabado',
+    },
   ],
   preview: {
     select: {
