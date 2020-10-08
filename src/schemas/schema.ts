@@ -6,6 +6,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import event from './event';
 import category from './category';
 import tag from './tag';
+import mentor from './mentor';
+import topics from './topics';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -18,5 +20,7 @@ export default createSchema({
     event,
     category,
     tag,
+    mentor,
+    topics,
   ]),
 });
