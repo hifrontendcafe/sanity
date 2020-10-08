@@ -8,7 +8,7 @@ export default {
   fields: [
     {
       title: 'Nombre',
-      name: 'title',
+      name: 'name',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
@@ -30,25 +30,30 @@ export default {
     {
       title: 'Calendly',
       name: 'calendly',
-      type: 'string',
+      type: 'url',
       validation: (Rule) => Rule.required(),
     },
     {
       title: 'LinkedIn',
       name: 'linkedin',
-      type: 'string',
+      type: 'url',
     },
     {
       title: 'Github',
       name: 'github',
-      type: 'string',
+      type: 'url',
     },
     {
       title: 'Temas',
-      name: 'temas',
+      name: 'topics',
       type: 'array',
-      of: [{ type: 'block' }],
-      validation: (Rule) => Rule.required(),
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'topic' }],
+          description: 'What topic do you want to help with?',
+        },
+      ],
     },
   ],
 };
