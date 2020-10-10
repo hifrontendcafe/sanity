@@ -1,7 +1,7 @@
 import { AiFillFolderOpen } from 'react-icons/ai';
 
 export default {
-  title: 'Categoria',
+  title: 'Categorias',
   name: 'category',
   type: 'document',
   icon: AiFillFolderOpen,
