@@ -34,6 +34,11 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Web / Portfolio',
+      name: 'web',
+      type: 'url',
+    },
+    {
       title: 'LinkedIn',
       name: 'linkedin',
       type: 'url',
