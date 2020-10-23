@@ -8,6 +8,7 @@ import category from './category';
 import tag from './tag';
 import mentor from './mentor';
 import topics from './topics';
+import docs from './docs';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -22,5 +23,6 @@ export default createSchema({
     tag,
     mentor,
     topics,
+    docs,
   ]),
 });
