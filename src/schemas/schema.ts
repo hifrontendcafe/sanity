@@ -7,8 +7,8 @@ import event from './event';
 import category from './category';
 import tag from './tag';
 import mentor from './mentor';
-import topics from './topics';
-import docs from './docs';
+import topic from './topic';
+import doc from './doc';
 import post from './post';
 import person from './person';
 
@@ -25,8 +25,8 @@ export default createSchema({
     category,
     tag,
     mentor,
-    topics,
-    docs,
+    topic,
+    doc,
     post,
   ]),
 });
