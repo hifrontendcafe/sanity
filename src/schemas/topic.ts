@@ -1,7 +1,7 @@
 import { MdList } from 'react-icons/md';
 
 export default {
-  title: 'Temas',
+  title: 'Tema',
   name: 'topic',
   type: 'document',
   icon: MdList,

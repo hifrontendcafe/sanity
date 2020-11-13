@@ -1,11 +1,17 @@
 import { MdSchool } from 'react-icons/md';
 
 export default {
-  title: 'Mentores',
+  title: 'Mentor',
   name: 'mentor',
   type: 'document',
   icon: MdSchool,
   fields: [
+    {
+      name: 'persona',
+      title: 'Persona',
+      type: 'reference',
+      to: [{ type: 'person' }],
+    },
     {
       title: 'Nombre',
       name: 'name',
