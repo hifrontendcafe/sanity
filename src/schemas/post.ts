@@ -44,7 +44,7 @@ export default {
       name: 'content',
       title: 'Contenido',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [{ type: 'block' }, { type: 'image' }],
     },
   ],
 };
