@@ -96,7 +96,7 @@ const contentTree = (S) =>
     );
 export default () =>
   S.list()
-    .title('FEC')
+    .title('Vamo’ el FEC')
     .items([
       S.listItem()
         .title('Personas')
