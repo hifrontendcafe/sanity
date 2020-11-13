@@ -8,6 +8,7 @@ import category from './category';
 import tag from './tag';
 import mentor from './mentor';
 import topics from './topics';
+import docs from './docs';
 import post from './post';
 import author from './author';
 
@@ -24,6 +25,7 @@ export default createSchema({
     tag,
     mentor,
     topics,
+    docs,
     post,
     author,
   ]),

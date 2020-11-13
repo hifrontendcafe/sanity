@@ -13,6 +13,11 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Descripcion',
+      name: 'description',
+      type: 'string',
+    },
+    {
       title: 'Photo',
       name: 'photo',
       type: 'image',
