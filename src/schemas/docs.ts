@@ -1,7 +1,7 @@
 import { GrArticle } from 'react-icons/gr';
 
 export default {
-  title: 'Docs',
+  title: 'Documento',
   name: 'docs',
   type: 'document',
   icon: GrArticle,

@@ -1,7 +1,7 @@
 import { AiFillTag } from 'react-icons/ai';
 
 export default {
-  title: 'Tags',
+  title: 'Tag',
   name: 'tag',
   type: 'document',
   icon: AiFillTag,

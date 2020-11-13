@@ -10,7 +10,7 @@ import mentor from './mentor';
 import topics from './topics';
 import docs from './docs';
 import post from './post';
-import author from './author';
+import person from './person';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -20,6 +20,7 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
+    person,
     event,
     category,
     tag,
@@ -27,6 +28,5 @@ export default createSchema({
     topics,
     docs,
     post,
-    author,
   ]),
 });

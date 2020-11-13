@@ -2,7 +2,7 @@ import { MdEventSeat } from 'react-icons/md';
 import { format } from 'date-fns';
 
 export default {
-  title: 'Eventos',
+  title: 'Evento',
   name: 'event',
   type: 'document',
   icon: MdEventSeat,
