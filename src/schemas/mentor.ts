@@ -24,6 +24,11 @@ export default {
       type: 'string',
     },
     {
+      title: 'Activo',
+      name: 'isActive',
+      type: 'boolean'
+    },
+    {
       title: 'Photo',
       name: 'photo',
       type: 'image',
@@ -72,4 +77,7 @@ export default {
       ],
     },
   ],
+  initialValue: {
+    isActive: true
+  }
 };
