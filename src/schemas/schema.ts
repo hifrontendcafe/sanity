@@ -11,6 +11,7 @@ import topic from './topic';
 import doc from './doc';
 import post from './post';
 import person from './person';
+import cmyk from './cmyk';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -28,5 +29,6 @@ export default createSchema({
     topic,
     doc,
     post,
+    cmyk,
   ]),
 });

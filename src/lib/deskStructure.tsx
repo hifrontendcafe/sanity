@@ -73,6 +73,10 @@ const initiativesTree = (S) =>
                     .child(S.documentTypeList('topic').title('Temas')),
                 ]),
             ),
+          S.listItem()
+            .title('CMYK+')
+            .schemaType('cmyk')
+            .child(S.documentTypeList('cmyk').title('Proyectos')),
         ]),
     );
 
