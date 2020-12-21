@@ -26,7 +26,7 @@ export default {
     {
       title: 'Activo',
       name: 'isActive',
-      type: 'boolean'
+      type: 'boolean',
     },
     {
       title: 'Photo',
@@ -78,6 +78,6 @@ export default {
     },
   ],
   initialValue: {
-    isActive: true
-  }
+    isActive: true,
+  },
 };
