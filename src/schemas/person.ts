@@ -7,13 +7,13 @@ export default {
   icon: BiUserCircle,
   fields: [
     {
-      name: 'first_name',
+      name: 'firstName',
       title: 'Nombre',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'last_name',
+      name: 'lastName',
       title: 'Apellido',
       type: 'string',
       validation: (Rule) => Rule.required(),
@@ -46,13 +46,12 @@ export default {
   ],
   preview: {
     select: {
-      firstName: 'first_name',
-      lastName: 'last_name',
+      firstName: 'firstName',
+      lastName: 'lastName',
       username: 'username.current',
       photo: 'photo',
     },
     prepare(selection) {
-      console.log(selection);
       const { firstName, lastName, username, photo } = selection;
       return {
         title: `${firstName} ${lastName}`,
