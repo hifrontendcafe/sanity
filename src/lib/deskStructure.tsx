@@ -77,6 +77,12 @@ const initiativesTree = (S) =>
             .title('CMYK+')
             .schemaType('cmyk')
             .child(S.documentTypeList('cmyk').title('Proyectos')),
+          S.listItem()
+            .title('Reactivistas')
+            .schemaType('reactGroup')
+            .child(
+              S.documentTypeList('reactGroup').title('Grupos de Reactivistas'),
+            ),
         ]),
     );
 
