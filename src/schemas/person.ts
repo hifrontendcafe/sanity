@@ -53,7 +53,7 @@ export default {
       const { firstName, lastName, username, photo } = selection;
       return {
         title: username,
-        subtitle: `${firstName} ${lastName}`,
+        subtitle: `${firstName || ''} ${lastName || ''}`,
         media: photo,
       };
     },
