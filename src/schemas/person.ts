@@ -7,18 +7,6 @@ export default {
   icon: BiUserCircle,
   fields: [
     {
-      name: 'firstName',
-      title: 'Nombre',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'lastName',
-      title: 'Apellido',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: 'username',
       title: 'Usuario',
       type: 'slug',
@@ -27,6 +15,16 @@ export default {
           `${doc.first_name.toLowerCase()}${doc.last_name.toLowerCase()}`,
       },
       validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'firstName',
+      title: 'Nombre',
+      type: 'string',
+    },
+    {
+      name: 'lastName',
+      title: 'Apellido',
+      type: 'string',
     },
     {
       name: 'photo',
@@ -54,8 +52,8 @@ export default {
     prepare(selection) {
       const { firstName, lastName, username, photo } = selection;
       return {
-        title: `${firstName} ${lastName}`,
-        subtitle: username,
+        title: username,
+        subtitle: `${firstName} ${lastName}`,
         media: photo,
       };
     },
