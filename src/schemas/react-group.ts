@@ -62,7 +62,23 @@ export default {
       name: 'startDate',
       type: 'datetime',
     },
+    {
+      title: 'Estado',
+      name: 'status',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Solicitado', value: 'draft' },
+          { title: 'Aprobado', value: 'approved' },
+          { title: 'Iniciado', value: 'started' },
+          { title: 'Terminado', value: 'done' },
+        ],
+      },
+    },
   ],
+  initialValue: {
+    status: 'draft',
+  },
   preview: {
     select: {
       name: 'name',

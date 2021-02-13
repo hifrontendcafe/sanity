@@ -9,13 +9,13 @@
     "test": "sanity check"
   },
   "dependencies": {
-    "@sanity/base": "^2.3.3",
+    "@sanity/base": "^2.3.6",
     "@sanity/color-input": "^2.2.6",
     "@sanity/components": "^2.2.6",
     "@sanity/core": "^2.3.3",
-    "@sanity/default-layout": "^2.3.3",
+    "@sanity/default-layout": "^2.3.6",
     "@sanity/default-login": "^2.2.6",
-    "@sanity/desk-tool": "^2.3.3",
+    "@sanity/desk-tool": "^2.3.6",
     "@sanity/production-preview": "^2.2.6",
     "@sanity/vision": "^2.2.6",
     "date-fns": "^2.16.1",
