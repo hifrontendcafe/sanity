@@ -55,8 +55,7 @@ export default {
     {
       title: 'Plan',
       name: 'plan',
-      type: 'array',
-      of: [{ type: 'block' }],
+      type: 'text',
     },
     {
       title: 'Fecha de inicio',
