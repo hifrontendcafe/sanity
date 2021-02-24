@@ -8,12 +8,8 @@ export default {
   fields: [
     {
       name: 'username',
-      title: 'Usuario',
-      type: 'slug',
-      options: {
-        source: (doc) =>
-          `${doc.first_name.toLowerCase()}${doc.last_name.toLowerCase()}`,
-      },
+      title: 'Usuario de Discord',
+      type: 'string',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -46,7 +42,7 @@ export default {
     select: {
       firstName: 'firstName',
       lastName: 'lastName',
-      username: 'username.current',
+      username: 'username',
       photo: 'photo',
     },
     prepare(selection) {
