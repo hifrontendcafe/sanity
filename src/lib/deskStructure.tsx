@@ -102,6 +102,10 @@ const contentTree = (S) =>
             .title('Posts')
             .schemaType('post')
             .child(S.documentTypeList('post').title('Posts')),
+          S.listItem()
+            .title('Iniciativas')
+            .schemaType('initiative')
+            .child(S.documentTypeList('initiative').title('Iniciativas')),
         ]),
     );
 export default () =>
