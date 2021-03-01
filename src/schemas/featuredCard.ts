@@ -1,10 +1,7 @@
-import { GoProject } from 'react-icons/go';
-
 export default {
-  title: 'Initiativas',
-  name: 'initiative',
+  title: 'Featured Cards',
+  name: 'featuredCards',
   type: 'document',
-  icon: GoProject,
   fields: [
     {
       title: 'Emoji',
@@ -28,6 +25,7 @@ export default {
       title: 'Color',
       name: 'color',
       type: 'color',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Link',

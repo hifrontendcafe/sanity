@@ -103,11 +103,16 @@ const contentTree = (S) =>
             .schemaType('post')
             .child(S.documentTypeList('post').title('Posts')),
           S.listItem()
-            .title('Iniciativas')
-            .schemaType('initiative')
-            .child(S.documentTypeList('initiative').title('Iniciativas')),
+            .title('Homepage')
+            .child(
+              S.editor()
+                .schemaType('homepage')
+                .documentId('homepage')
+                .title('Homepage'),
+            ),
         ]),
     );
+
 export default () =>
   S.list()
     .title('Vamo’ el FEC')
