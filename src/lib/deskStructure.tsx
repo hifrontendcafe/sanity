@@ -103,13 +103,9 @@ const contentTree = (S) =>
             .schemaType('post')
             .child(S.documentTypeList('post').title('Posts')),
           S.listItem()
-            .title('Homepage')
-            .child(
-              S.editor()
-                .schemaType('homepage')
-                .documentId('homepage')
-                .title('Homepage'),
-            ),
+            .title('Featured cards')
+            .schemaType('featuredCards')
+            .child(S.documentTypeList('featuredCards').title('Cards')),
         ]),
     );
 

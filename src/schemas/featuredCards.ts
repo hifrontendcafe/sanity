@@ -1,11 +1,14 @@
+import { AiFillHome } from 'react-icons/ai';
+
 export default {
   title: 'Featured Cards',
   name: 'featuredCards',
   type: 'document',
+  icon: AiFillHome,
   fields: [
     {
-      title: 'Emoji',
-      name: 'emoji',
+      title: 'Icono',
+      name: 'icon',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
