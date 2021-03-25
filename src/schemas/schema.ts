@@ -13,6 +13,7 @@ import post from './post';
 import person from './person';
 import cmyk from './cmyk';
 import reactGroup from './react-group';
+import cmykParticipant from './cmyk-participant';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -32,5 +33,6 @@ export default createSchema({
     post,
     cmyk,
     reactGroup,
+    cmykParticipant,
   ]),
 });

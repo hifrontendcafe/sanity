@@ -5,7 +5,7 @@
   },
   "api": {
     "projectId": "0mjeop5f",
-    "dataset": "production"
+    "dataset": "playground"
   },
   "plugins": [
     "@sanity/base",
@@ -18,9 +18,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [
