@@ -120,8 +120,13 @@ const contentTree = (S) =>
             .title('Posts')
             .schemaType('post')
             .child(S.documentTypeList('post').title('Posts')),
+          S.listItem()
+            .title('Featured cards')
+            .schemaType('featuredCards')
+            .child(S.documentTypeList('featuredCards').title('Cards')),
         ]),
     );
+
 export default () =>
   S.list()
     .title('Vamo’ el FEC')
