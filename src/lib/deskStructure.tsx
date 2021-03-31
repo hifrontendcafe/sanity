@@ -1,7 +1,7 @@
 import React from 'react';
 import S from '@sanity/desk-tool/structure-builder';
 import { MdEventSeat } from 'react-icons/md';
-import { BsFillPeopleFill, BsBookHalf } from 'react-icons/bs';
+import { BsFillPeopleFill, BsBookHalf, BsGear } from 'react-icons/bs';
 import { FaPeopleCarry } from 'react-icons/fa';
 import { GiTeacher } from 'react-icons/gi';
 import { IoIosColorFilter } from 'react-icons/io';
@@ -127,10 +127,18 @@ const contentTree = (S) =>
         ]),
     );
 
+const settingsTree = (S) =>
+  S.listItem()
+    .title('Settings')
+    .icon(BsGear)
+    .child(S.document().schemaType('settings').documentId('settings'));
+
 export default () =>
   S.list()
     .title('Vamo’ el FEC')
     .items([
+      settingsTree(S),
+      S.divider(),
       S.listItem()
         .title('Personas')
         .icon(BsFillPeopleFill)
