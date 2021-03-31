@@ -10,7 +10,13 @@ export default {
       name: 'username',
       title: 'Usuario de Discord',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) =>
+        Rule.required()
+          .regex(/(.*)#(\d{4})/, {
+            name: 'Usuario de discord',
+            invert: false,
+          })
+          .error('Usuario incorrecto. Ej: Usuario#1234'),
     },
     {
       name: 'firstName',
@@ -23,6 +29,12 @@ export default {
       type: 'string',
     },
     {
+      name: 'email',
+      title: 'Mail',
+      type: 'string',
+      validation: (Rule) => Rule.email(),
+    },
+    {
       name: 'photo',
       title: 'Foto',
       type: 'image',
@@ -30,6 +42,16 @@ export default {
     {
       title: 'Portfolio',
       name: 'portfolio',
+      type: 'url',
+    },
+    {
+      title: 'GitHub',
+      name: 'github',
+      type: 'url',
+    },
+    {
+      title: 'Twitter',
+      name: 'twitter',
       type: 'url',
     },
     {
