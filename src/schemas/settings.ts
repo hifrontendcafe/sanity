@@ -39,8 +39,7 @@ export default {
       title: 'Hero words',
       name: 'heroWords',
       type: 'array',
-      description:
-        'Words that rotate randomly in the Hero componentActive items for top menu. Format: Label/page',
+      description: 'Words that rotate randomly in the Hero component',
       of: [{ type: 'string' }],
       validation: (Rule) => Rule.unique(),
     },
