@@ -56,5 +56,11 @@ export default {
         { name: 'twitch', type: 'string', title: 'Twitch' },
       ],
     },
+    {
+      title: 'CMYK Inscription',
+      name: 'cmykInscription',
+      type: 'boolean',
+      validation: (Rule) => Rule.required(),
+    },
   ],
 };
