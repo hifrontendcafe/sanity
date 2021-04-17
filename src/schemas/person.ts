@@ -59,7 +59,16 @@ export default {
       name: 'linkedin',
       type: 'url',
     },
+    {
+      title: 'Team FEC',
+      name: 'fecTeam',
+      type: 'boolean',
+      validation: (Rule) => Rule.required(),
+    },
   ],
+  initialValue: {
+    fecTeam: false,
+  },
   preview: {
     select: {
       firstName: 'firstName',
