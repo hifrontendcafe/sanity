@@ -1,6 +1,6 @@
 import languages from './languages';
 
-const types = ['string'];
+const types = ['string', 'text'];
 
 const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
 
