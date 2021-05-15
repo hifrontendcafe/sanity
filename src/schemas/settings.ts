@@ -21,7 +21,7 @@ export default {
       name: 'menu',
       type: 'array',
       description: 'Active items for top menu. Format: Label/page',
-      of: [{ type: 'string' }],
+      of: [{ type: 'localeString' }],
       validation: (Rule) => Rule.unique(),
     },
     {

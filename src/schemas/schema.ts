@@ -16,6 +16,7 @@ import reactGroup from './react-group';
 import cmykParticipant from './cmyk-participant';
 import featuredCards from './featuredCards';
 import settings from './settings';
+import localeFields from './lang/localeFields';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -25,6 +26,7 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
+    ...localeFields,
     settings,
     person,
     event,
