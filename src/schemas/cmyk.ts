@@ -13,6 +13,19 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Versión CMYK',
+      name: 'cmykVersion',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'V 1.0', value: 'cmyk-1' },
+          { title: 'V 2.0', value: 'cmyk-2' },
+          { title: 'V 3.0', value: 'cmyk-3' },
+          { title: 'V 4.0', value: 'cmyk-4' },
+        ],
+      },
+    },
+    {
       name: 'description',
       title: 'Descripcion',
       type: 'text',
