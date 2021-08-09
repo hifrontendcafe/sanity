@@ -7,6 +7,12 @@ export default {
   icon: BiUserCircle,
   fields: [
     {
+      name: 'discordID',
+      title: 'ID de Discord',
+      type: 'slug',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'username',
       title: 'Usuario de Discord',
       type: 'string',
@@ -63,12 +69,9 @@ export default {
       title: 'Team FEC',
       name: 'fecTeam',
       type: 'boolean',
-      validation: (Rule) => Rule.required(),
+      initialValue: false,
     },
   ],
-  initialValue: {
-    fecTeam: false,
-  },
   preview: {
     select: {
       firstName: 'firstName',
