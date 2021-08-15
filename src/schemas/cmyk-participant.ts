@@ -100,7 +100,6 @@ export default {
   ],
   initialValue: {
     status: 'revision',
-    cmykVersion: '4',
   },
   preview: {
     select: {

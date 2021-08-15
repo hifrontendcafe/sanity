@@ -9,19 +9,19 @@
   },
   "plugins": [
     "@sanity/base",
+    "@sanity/dashboard",
     "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/production-preview",
     "@sanity/color-input",
-    "markdown"
+    "markdown",
+    "cmyk-participation-datatable"
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [
@@ -31,7 +31,11 @@
     },
     {
       "name": "part:@sanity/desk-tool/structure",
-      "path": "./src/lib/deskStructure.tsx"
+      "path": "./src/lib/deskStructure"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./src/dashboardConfig"
     },
     {
       "implements": "part:@sanity/base/brand-logo",

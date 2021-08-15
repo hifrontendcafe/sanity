@@ -1,4 +1,5 @@
 import { BiUserCircle } from 'react-icons/bi';
+import { timezones } from '../lib/timezones';
 
 export default {
   name: 'person',
@@ -39,6 +40,14 @@ export default {
       title: 'Mail',
       type: 'string',
       validation: (Rule) => Rule.email(),
+    },
+    {
+      name: 'timezone',
+      title: 'Zona Horaria',
+      type: 'string',
+      options: {
+        list: timezones.map((tz) => ({ title: tz.text, value: tz.text })),
+      },
     },
     {
       name: 'photo',

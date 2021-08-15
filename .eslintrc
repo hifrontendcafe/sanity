@@ -13,6 +13,16 @@
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended"
   ],
+  "eslintConfig": {
+    "rules": {
+      "import/no-unresolved": [
+        2,
+        {
+          "ignore": ["^(all|part):"]
+        }
+      ]
+    }
+  },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
     "react/prop-types": "off"
