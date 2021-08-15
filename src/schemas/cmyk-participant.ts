@@ -14,6 +14,20 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'CMYK Version',
+      name: 'cmykVersion',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'v1.0', value: '1' },
+          { title: 'v2.0', value: '2' },
+          { title: 'v3.0', value: '3' },
+          { title: 'v4.0', value: '4' },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'participationLevel',
       title: 'Nivel de Participación',
       type: 'string',
@@ -86,6 +100,7 @@ export default {
   ],
   initialValue: {
     status: 'revision',
+    cmykVersion: '4',
   },
   preview: {
     select: {
