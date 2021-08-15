@@ -4,6 +4,7 @@ import styles from './Styles.css';
 import sanityClient from 'part:@sanity/base/client';
 import Spinner from 'part:@sanity/components/loading/spinner';
 import { FormControl, NativeSelect } from '@material-ui/core';
+import pepeJedi from './assets/images/pepe-jedi.gif';
 
 const withConfig = (config) => {
   return typeof sanityClient.withConfig === 'function'
@@ -25,7 +26,7 @@ class CMYKParticipationDatatable extends React.Component {
   getCMYKParticipants = (cmykVer = 4) => {
     withConfig({ apiVersion: 'v1' })
       .fetch(
-        `*[_type == "cmykParticipant" &&  cmykVersion == "${cmykVer}"] { _createdAt, "discordUser": discordUser->username, "email": discordUser->email, aboutParticipant, "timezone":discordUser->timezone, experience, otherQuestions, participationLevel, previousKnowledge, status}`,
+        `*[_type == "cmykParticipant" &&  cmykVersion == "${cmykVer}"] { _createdAt, "discordUser": discordUser->username, "email": discordUser->email, aboutParticipant, "timezone":discordUser->timezone, experience, timeAvailability, otherQuestions, participationLevel, previousKnowledge, status}`,
         {},
       )
       .then((cmykPart) => {
@@ -70,6 +71,20 @@ class CMYKParticipationDatatable extends React.Component {
         options: {
           filter: true,
           sort: true,
+        },
+      },
+      {
+        name: 'timeAvailability',
+        label: 'Disponibilidad horaria (semanal)',
+        options: {
+          filter: false,
+          sort: true,
+          customBodyRender: (value) =>
+            value === '>2<4hours'
+              ? 'Entre 2 y 4 horas'
+              : value === '>4<6hours'
+              ? 'Entre 4 y 6 horas'
+              : 'Más de 6 horas',
         },
       },
       {
@@ -131,19 +146,22 @@ class CMYKParticipationDatatable extends React.Component {
 
     const CustomBtn = () => {
       return (
-        <FormControl style={{ alignContent: 'center', margin: '10px 0' }}>
-          <NativeSelect
-            value={this.state.cmykVersion}
-            onChange={handleSelectChange}
-            name="cmykVersion"
-            inputProps={{ 'aria-label': 'cmykVersion' }}
-          >
-            <option value="1">CMYK v1.0</option>
-            <option value="2">CMYK v2.0</option>
-            <option value="3">CMYK v3.0</option>
-            <option value="4">CMYK v4.0</option>
-          </NativeSelect>
-        </FormControl>
+        <>
+          <FormControl style={{ alignContent: 'center', margin: '10px 0' }}>
+            <NativeSelect
+              value={this.state.cmykVersion}
+              onChange={handleSelectChange}
+              name="cmykVersion"
+              inputProps={{ 'aria-label': 'cmykVersion' }}
+            >
+              <option value="1">CMYK v1.0</option>
+              <option value="2">CMYK v2.0</option>
+              <option value="3">CMYK v3.0</option>
+              <option value="4">CMYK v4.0</option>
+            </NativeSelect>
+          </FormControl>
+          <img src={pepeJedi} alt="jedi pepe" width="40px" height="40px" />
+        </>
       );
     };
 
@@ -189,7 +207,7 @@ class CMYKParticipationDatatable extends React.Component {
       <div className={styles.container}>
         {!this.state.loading ? (
           <MUIDataTable
-            title="CMYK Participation List"
+            title="CMYK | Lista de Participantes"
             data={this.state.cmykParticipantsList}
             columns={columns}
             options={options}
