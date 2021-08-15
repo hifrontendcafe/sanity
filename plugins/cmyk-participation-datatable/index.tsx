@@ -147,7 +147,7 @@ class CMYKParticipationDatatable extends React.Component {
     const CustomBtn = () => {
       return (
         <>
-          <FormControl style={{ alignContent: 'center', margin: '10px 0' }}>
+          <FormControl style={{ margin: '10px 0' }}>
             <NativeSelect
               value={this.state.cmykVersion}
               onChange={handleSelectChange}
