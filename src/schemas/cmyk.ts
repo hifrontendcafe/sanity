@@ -57,6 +57,9 @@ export default {
       title: 'Imagen',
       type: 'image',
       validation: (Rule) => Rule.required(),
+      options: {
+        hotspot: true,
+      },
     },
   ],
 };

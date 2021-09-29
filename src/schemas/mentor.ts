@@ -32,6 +32,9 @@ export default {
       title: 'Photo',
       name: 'photo',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
       fields: [
         {
           title: 'Alt',

@@ -33,6 +33,9 @@ export default {
       title: 'Cover',
       name: 'cover',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
       fields: [
         {
           title: 'Alt',
