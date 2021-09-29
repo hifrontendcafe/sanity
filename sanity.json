@@ -9,7 +9,6 @@
   },
   "plugins": [
     "@sanity/base",
-    "@sanity/dashboard",
     "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
@@ -17,11 +16,14 @@
     "@sanity/production-preview",
     "@sanity/color-input",
     "markdown",
+    "@sanity/dashboard",
     "cmyk-participation-datatable"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [
