@@ -54,6 +54,7 @@ export default {
         { name: 'youtube', type: 'string', title: 'Youtube' },
         { name: 'linkedin', type: 'string', title: 'Linkedin' },
         { name: 'twitch', type: 'string', title: 'Twitch' },
+        { name: 'instagram', type: 'string', title: 'Instagram' },
       ],
     },
     {
