@@ -53,6 +53,9 @@ export default {
       name: 'photo',
       title: 'Foto',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
     {
       title: 'Portfolio',
