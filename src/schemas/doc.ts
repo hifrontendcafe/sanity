@@ -22,12 +22,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Body',
-      name: 'body',
-      type: 'array',
-      of: [{ type: 'block' }],
-    },
-    {
       title: 'Content',
       name: 'content',
       type: 'markdown',
