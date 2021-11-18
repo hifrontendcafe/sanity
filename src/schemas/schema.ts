@@ -16,6 +16,7 @@ import reactGroup from './react-group';
 import cmykParticipant from './cmyk-participant';
 import featuredCards from './featuredCards';
 import settings from './settings';
+import page from './page';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -38,5 +39,6 @@ export default createSchema({
     reactGroup,
     cmykParticipant,
     featuredCards,
+    page,
   ]),
 });
