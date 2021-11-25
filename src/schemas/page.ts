@@ -24,7 +24,7 @@ export default {
     {
       title: 'Descripción',
       name: 'description',
-      type: 'string',
+      type: 'text',
     },
     {
       title: 'Link',
