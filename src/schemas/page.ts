@@ -14,7 +14,7 @@ export default {
     {
       title: 'URL',
       name: 'path',
-      type: 'url',
+      type: 'slug',
     },
     {
       title: 'Nombre del hero',
