@@ -124,6 +124,10 @@ const contentTree = (S) =>
             .title('Featured cards')
             .schemaType('featuredCards')
             .child(S.documentTypeList('featuredCards').title('Cards')),
+          S.listItem()
+            .title('Páginas')
+            .schemaType('page')
+            .child(S.documentTypeList('page').title('Páginas')),
         ]),
     );
 
