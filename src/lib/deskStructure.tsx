@@ -1,10 +1,13 @@
-import React from 'react';
 import S from '@sanity/desk-tool/structure-builder';
+import sanityClient from 'part:@sanity/base/client';
 import { MdEventSeat } from 'react-icons/md';
 import { BsFillPeopleFill, BsBookHalf, BsGear } from 'react-icons/bs';
 import { FaPeopleCarry } from 'react-icons/fa';
 import { GiTeacher } from 'react-icons/gi';
 import { IoIosColorFilter } from 'react-icons/io';
+import { GoProject } from 'react-icons/go';
+
+const client = sanityClient.withConfig({ apiVersion: '2022-01-22' });
 
 const currentDateTime = new Date().toISOString();
 
@@ -137,17 +140,63 @@ const settingsTree = (S) =>
     .icon(BsGear)
     .child(S.document().schemaType('settings').documentId('settings'));
 
+const peopleTree = (S) =>
+  S.listItem()
+    .title('Personas')
+    .icon(BsFillPeopleFill)
+    .child(
+      S.list()
+        .title('Personas')
+        .items([
+          S.listItem()
+            .title('Personas')
+            .icon(BsFillPeopleFill)
+            .schemaType('person')
+            .child(S.documentTypeList('person').title('Personas')),
+          S.listItem()
+            .title('Mentores')
+            .schemaType('mentor')
+            .child(S.documentTypeList('mentor').title('Mentores')),
+          S.listItem()
+            .title('Perfiles')
+            .schemaType('profile')
+            .child(S.documentTypeList('profile').title('Perfiles')),
+          S.listItem()
+            .schemaType('person')
+            .title('CMYK')
+            .icon(GoProject)
+            .child(
+              S.documentTypeList('cmykParticipant').title('Participantes'),
+            ),
+          S.listItem()
+            .title('Reactivistas')
+            .schemaType('reactGroup')
+            .child(
+              S.documentTypeList('reactGroup')
+                .title('Miembros')
+                .child(async (id) => {
+                  const reactGroup = await client.fetch(`*[_id == "${id}"][0]`);
+
+                  const personIds = reactGroup.participants.map(
+                    (participant) => participant._ref,
+                  );
+                  personIds.push(reactGroup.teamCaptain._ref);
+
+                  return S.documentTypeList('person')
+                    .filter('_id in $personIds')
+                    .params({ personIds });
+                }),
+            ),
+        ]),
+    );
+
 export default () =>
   S.list()
     .title('Vamo’ el FEC')
     .items([
       settingsTree(S),
       S.divider(),
-      S.listItem()
-        .title('Personas')
-        .icon(BsFillPeopleFill)
-        .schemaType('person')
-        .child(S.documentTypeList('person').title('Personas')),
+      peopleTree(S),
       eventsTree(S),
       initiativesTree(S),
       contentTree(S),
