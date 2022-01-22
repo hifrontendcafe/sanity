@@ -1,3 +1,4 @@
+import React from 'react';
 import S from '@sanity/desk-tool/structure-builder';
 import sanityClient from 'part:@sanity/base/client';
 import { MdEventSeat } from 'react-icons/md';
