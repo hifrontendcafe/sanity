@@ -58,7 +58,7 @@ export default {
       },
     },
     {
-      title: 'Portfolio',
+      title: 'Web / Portfolio',
       name: 'portfolio',
       type: 'url',
     },
