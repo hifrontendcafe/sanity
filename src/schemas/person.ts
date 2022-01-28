@@ -83,6 +83,12 @@ export default {
       type: 'boolean',
       initialValue: false,
     },
+    {
+      title: 'Viene de perfil (postgres)',
+      name: 'fromProfile',
+      type: 'boolean',
+      initialValue: false,
+    },
   ],
   preview: {
     select: {

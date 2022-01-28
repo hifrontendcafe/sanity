@@ -24,6 +24,18 @@ export function contentTree(S) {
             .title('Páginas')
             .schemaType('page')
             .child(S.documentTypeList('page').title('Páginas')),
+          S.listItem()
+            .title('Tecnologías')
+            .schemaType('technology')
+            .child(S.documentTypeList('technology').title('Tecnologías')),
+          S.listItem()
+            .title('Roles')
+            .schemaType('role')
+            .child(S.documentTypeList('role').title('Roles')),
+          S.listItem()
+            .title('Seniorities')
+            .schemaType('seniority')
+            .child(S.documentTypeList('seniority').title('Seniorities')),
         ]),
     );
 }
