@@ -6,6 +6,7 @@ import { initiativesTree } from './initiativesTree';
 import { contentTree } from './contentTree';
 import { settingsTree } from './settingsTree';
 import { peopleTree } from './peopleTree';
+import assetsTree from './assetsTree';
 
 export const client = sanityClient.withConfig({ apiVersion: '2022-01-22' });
 
@@ -19,5 +20,6 @@ export default () =>
       eventsTree(S),
       initiativesTree(S),
       contentTree(S),
+      assetsTree,
       // ...S.documentTypeListItems(),
     ]);
