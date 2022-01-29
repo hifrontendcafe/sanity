@@ -1,3 +1,4 @@
+import React from 'react';
 import { MdEventSeat } from 'react-icons/md';
 
 const currentDateTime = new Date().toISOString();
