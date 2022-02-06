@@ -9669,6 +9669,11 @@ sanity-diff-patch@^1.0.9:
   dependencies:
     diff-match-patch "^1.0.5"
 
+sanity-plugin-dark-theme-blue@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/sanity-plugin-dark-theme-blue/-/sanity-plugin-dark-theme-blue-1.0.1.tgz#74804676323b49d05df383ec5c6d72458d3e8679"
+  integrity sha512-5J9HjLCVsiHDqms9aLBY3lDGlajaQ2mp/h/XPwTgmKvg+F8gCjFi1uOyFevRYx/gdy/98Y4hsuj1fmPX9uHNJw==
+
 sanity-plugin-markdown@^2.0.2:
   version "2.1.1"
   resolved "https://registry.npmjs.org/sanity-plugin-markdown/-/sanity-plugin-markdown-2.1.1.tgz#1e17792a2aeb00d6da798d35b74acb1aa7080658"

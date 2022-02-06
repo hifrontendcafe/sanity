@@ -17,11 +17,14 @@
     "@sanity/color-input",
     "markdown",
     "@sanity/dashboard",
-    "cmyk-participation-datatable"
+    "cmyk-participation-datatable",
+    "dark-theme-blue"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [
@@ -40,10 +43,6 @@
     {
       "implements": "part:@sanity/base/brand-logo",
       "path": "./src/components/Logo"
-    },
-    {
-      "implements": "part:@sanity/base/theme/variables/override-style",
-      "path": "./src/styles/variables.css"
     },
     {
       "implements": "part:@sanity/production-preview/resolve-production-url",
