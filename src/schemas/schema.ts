@@ -21,6 +21,7 @@ import page from './page';
 import technology from './technology';
 import role from './role';
 import seniority from './seniority';
+import steps from './steps';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -48,5 +49,6 @@ export default createSchema({
     featuredCards,
     page,
     technology,
+    steps,
   ]),
 });
