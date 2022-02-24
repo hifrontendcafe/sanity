@@ -40,6 +40,12 @@ export function contentTree(S) {
             .title('Pasos de mentorías')
             .schemaType('steps')
             .child(S.documentTypeList('steps').title('Pasos')),
+          S.listItem()
+            .title('Canales con eventos')
+            .schemaType('eventChannel')
+            .child(
+              S.documentTypeList('eventChannel').title('Canales con eventos'),
+            ),
         ]),
     );
 }
