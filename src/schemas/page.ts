@@ -42,6 +42,11 @@ export default {
       type: 'string',
     },
     {
+      title: 'Descripción breve',
+      name: 'shortDescription',
+      type: 'string',
+    },
+    {
       title: 'URL',
       name: 'path',
       type: 'slug',
