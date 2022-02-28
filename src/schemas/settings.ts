@@ -25,6 +25,20 @@ export default {
       validation: (Rule) => Rule.unique(),
     },
     {
+      title: 'Navbar',
+      name: 'navbar',
+      type: 'array',
+      description:
+        'Items for navbar, could be references to pages or external urls',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'page' }, { type: 'externalUrl' }],
+        },
+      ],
+      validation: (Rule) => Rule.unique(),
+    },
+    {
       name: 'logo',
       title: 'Logo',
       type: 'image',

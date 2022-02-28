@@ -23,6 +23,7 @@ import role from './role';
 import seniority from './seniority';
 import eventChannels from './event-channels';
 import steps from './steps';
+import externalUrl from './externalUrl';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -52,5 +53,6 @@ export default createSchema({
     technology,
     eventChannels,
     steps,
+    externalUrl,
   ]),
 });
