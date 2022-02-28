@@ -37,6 +37,11 @@ export default {
   ],
   fields: [
     {
+      title: 'Nombre',
+      name: 'name',
+      type: 'string',
+    },
+    {
       title: 'Título',
       name: 'title',
       type: 'string',
