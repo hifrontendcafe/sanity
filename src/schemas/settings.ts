@@ -39,6 +39,15 @@ export default {
       validation: (Rule) => Rule.unique(),
     },
     {
+      title: 'FooterNav',
+      name: 'footerNav',
+      type: 'array',
+      description:
+        'Items for footerNav, could be references to nav items (text to display and page or external url)',
+      of: [{ type: 'navItem' }],
+      validation: (Rule) => Rule.unique(),
+    },
+    {
       name: 'logo',
       title: 'Logo',
       type: 'image',

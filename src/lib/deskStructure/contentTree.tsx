@@ -50,6 +50,10 @@ export function contentTree(S) {
             .title('URLs externas')
             .schemaType('externalUrl')
             .child(S.documentTypeList('externalUrl').title('URLs externas')),
+          S.listItem()
+            .title('Nav items')
+            .schemaType('navItem')
+            .child(S.documentTypeList('navItem').title('Nav Items')),
         ]),
     );
 }
