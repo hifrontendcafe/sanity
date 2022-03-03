@@ -24,6 +24,7 @@ import seniority from './seniority';
 import eventChannels from './event-channels';
 import steps from './steps';
 import externalUrl from './externalUrl';
+import navItem from './navItem';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -54,5 +55,6 @@ export default createSchema({
     eventChannels,
     steps,
     externalUrl,
+    navItem,
   ]),
 });
