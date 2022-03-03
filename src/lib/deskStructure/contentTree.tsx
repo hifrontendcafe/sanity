@@ -36,10 +36,7 @@ export function contentTree(S) {
             .title('Seniorities')
             .schemaType('seniority')
             .child(S.documentTypeList('seniority').title('Seniorities')),
-          S.listItem()
-            .title('Pasos de mentorías')
-            .schemaType('steps')
-            .child(S.documentTypeList('steps').title('Pasos')),
+
           S.listItem()
             .title('Canales con eventos')
             .schemaType('eventChannel')
