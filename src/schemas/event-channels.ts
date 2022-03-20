@@ -16,6 +16,15 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Categoría',
+      name: 'category',
+      type: 'string',
+      options: {
+        source: 'category',
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Id',
       name: 'id',
       type: 'string',
