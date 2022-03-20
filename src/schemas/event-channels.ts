@@ -25,6 +25,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Imagen por defecto',
+      name: 'defaultImage',
+      type: 'image',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Id',
       name: 'id',
       type: 'string',
