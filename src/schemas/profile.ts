@@ -25,6 +25,12 @@ export default {
       to: [{ type: 'seniority' }],
     },
     {
+      name: 'technologies',
+      title: 'Tecnologias',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'technology' }] }]
+    },
+    {
       title: 'Descripcion',
       name: 'description',
       type: 'text',
