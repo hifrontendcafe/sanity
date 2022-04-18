@@ -54,6 +54,11 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Fecha de Fin',
+      name: 'endDate',
+      type: 'datetime',
+    },
+    {
       title: 'Descripcion',
       name: 'description',
       type: 'array',
