@@ -114,6 +114,7 @@ export default {
     },
     {
       title: 'Componentes',
+      group: 'components',
       name: 'components',
       type: 'array',
       of: componentsTypes.map((component) => ({ type: component.name })),
