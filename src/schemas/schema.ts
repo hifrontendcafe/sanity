@@ -24,6 +24,7 @@ import seniority from './seniority';
 import eventChannels from './event-channels';
 import externalUrl from './externalUrl';
 import navItem from './navItem';
+import components from './components';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -32,6 +33,9 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
+    /* components objects */
+    ...components,
+
     /* Your types here! */
     settings,
     person,

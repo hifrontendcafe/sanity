@@ -1,4 +1,5 @@
 import { RiPagesLine } from 'react-icons/ri';
+import componentsTypes from './components';
 
 const seo = [
   {
@@ -110,6 +111,13 @@ export default {
       title: 'Link',
       name: 'doc',
       type: 'url',
+    },
+    {
+      title: 'Componentes',
+      group: 'components',
+      name: 'components',
+      type: 'array',
+      of: componentsTypes.map((component) => ({ type: component.name })),
     },
   ],
 };
