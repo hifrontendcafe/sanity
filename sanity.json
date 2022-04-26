@@ -36,8 +36,7 @@
     "@sanity/color-input",
     "markdown",
     "@sanity/dashboard",
-    "cmyk-participation-datatable",
-    "dark-theme-blue"
+    "cmyk-participation-datatable"
   ],
   "env": {
     "development": {
@@ -45,6 +44,10 @@
     }
   },
   "parts": [
+    {
+      "implements": "part:@sanity/base/theme/variables/override-style",
+      "path": "./theme/dark.css"
+    },
     {
       "name": "part:@sanity/base/schema",
       "path": "./src/schemas/schema"
