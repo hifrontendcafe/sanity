@@ -1,5 +1,6 @@
 import { BsFillPeopleFill } from 'react-icons/bs';
 import { GoProject } from 'react-icons/go';
+import { GiUnicorn } from 'react-icons/gi';
 import { client } from './index';
 
 export function peopleTree(S) {
@@ -29,6 +30,17 @@ export function peopleTree(S) {
             .icon(GoProject)
             .child(
               S.documentTypeList('cmykParticipant').title('Participantes'),
+            ),
+          S.listItem()
+            .schemaType('person')
+            .title('Equipo')
+            .icon(GiUnicorn)
+            .child(
+              S.documentTypeList('person')
+                .title('Equipo')
+                .child()
+                .filter('fecTeam == true')
+                .child(S.documentTypeList('person').title('Persona')),
             ),
           S.listItem()
             .title('Reactivistas')
