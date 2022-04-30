@@ -17,14 +17,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Menu',
-      name: 'menu',
-      type: 'array',
-      description: 'Active items for top menu. Format: Label/page',
-      of: [{ type: 'string' }],
-      validation: (Rule) => Rule.unique(),
-    },
-    {
       title: 'Navbar',
       name: 'navbar',
       type: 'array',
