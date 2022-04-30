@@ -23,14 +23,10 @@ export default {
     },
     {
       title: 'Content',
+      description:
+        'Guía de markdown https://www.markdownguide.org/cheat-sheet/',
       name: 'content',
       type: 'markdown',
-    },
-    {
-      title: 'Content',
-      name: 'body',
-      type: 'array',
-      of: [{ type: 'block' }],
     },
   ],
 };
