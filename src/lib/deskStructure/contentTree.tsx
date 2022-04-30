@@ -32,13 +32,6 @@ export function contentTree(S) {
             .title('Seniorities')
             .schemaType('seniority')
             .child(S.documentTypeList('seniority').title('Seniorities')),
-
-          S.listItem()
-            .title('Canales con eventos')
-            .schemaType('eventChannel')
-            .child(
-              S.documentTypeList('eventChannel').title('Canales con eventos'),
-            ),
           S.listItem()
             .title('URLs externas')
             .schemaType('externalUrl')
