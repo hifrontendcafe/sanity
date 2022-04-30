@@ -53,13 +53,6 @@ export default {
       type: 'image',
     },
     {
-      name: 'heroBackground',
-      title: 'Hero Background',
-      type: 'image',
-      description: 'The correct resolution to upload an image is 1280x500.',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       title: 'Hero words',
       name: 'heroWords',
       type: 'array',
