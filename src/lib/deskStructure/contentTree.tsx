@@ -13,10 +13,6 @@ export function contentTree(S) {
             .schemaType('docs')
             .child(S.documentTypeList('docs').title('Documentos')),
           S.listItem()
-            .title('Posts')
-            .schemaType('post')
-            .child(S.documentTypeList('post').title('Posts')),
-          S.listItem()
             .title('Featured cards')
             .schemaType('featuredCards')
             .child(S.documentTypeList('featuredCards').title('Cards')),
