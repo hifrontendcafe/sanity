@@ -1,10 +1,10 @@
-import { GrArticle } from 'react-icons/gr';
+import { RiArticleLine } from 'react-icons/ri';
 
 export default {
   title: 'Documento',
   name: 'docs',
   type: 'document',
-  icon: GrArticle,
+  icon: RiArticleLine,
   fields: [
     {
       title: 'Título',
@@ -25,6 +25,12 @@ export default {
       title: 'Content',
       name: 'content',
       type: 'markdown',
+    },
+    {
+      title: 'Content',
+      name: 'body',
+      type: 'array',
+      of: [{ type: 'block' }],
     },
   ],
 };
