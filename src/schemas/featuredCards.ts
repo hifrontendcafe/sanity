@@ -7,12 +7,6 @@ export default {
   icon: AiFillHome,
   fields: [
     {
-      title: 'Icono',
-      name: 'icon',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       title: 'Titulo',
       name: 'title',
       type: 'string',
@@ -25,18 +19,13 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Color',
-      name: 'color',
-      type: 'color',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       title: 'Link',
       name: 'link',
       type: 'string',
     },
     {
-      title: 'Texto del boton',
+      title: 'Texto del link',
+      description: 'Texto azul que aparece abajo en la card',
       name: 'btnText',
       type: 'string',
       validation: (Rule) => Rule.required(),
