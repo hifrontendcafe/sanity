@@ -30,7 +30,12 @@ export function eventsTree(S) {
                 .filter('_type == "event" && date < $currentDateTime')
                 .params({ currentDateTime }),
             ),
-
+          S.listItem()
+            .title('Canales con eventos')
+            .schemaType('eventChannel')
+            .child(
+              S.documentTypeList('eventChannel').title('Canales con eventos'),
+            ),
           S.listItem()
             .title('Categorias')
             .schemaType('category')

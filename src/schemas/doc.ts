@@ -1,10 +1,10 @@
-import { GrArticle } from 'react-icons/gr';
+import { RiArticleLine } from 'react-icons/ri';
 
 export default {
   title: 'Documento',
   name: 'docs',
   type: 'document',
-  icon: GrArticle,
+  icon: RiArticleLine,
   fields: [
     {
       title: 'Título',
@@ -23,6 +23,8 @@ export default {
     },
     {
       title: 'Content',
+      description:
+        'Guía de markdown https://www.markdownguide.org/cheat-sheet/',
       name: 'content',
       type: 'markdown',
     },

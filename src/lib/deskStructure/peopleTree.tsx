@@ -32,15 +32,13 @@ export function peopleTree(S) {
               S.documentTypeList('cmykParticipant').title('Participantes'),
             ),
           S.listItem()
-            .schemaType('person')
             .title('Equipo')
             .icon(GiUnicorn)
+            .schemaType('person')
             .child(
               S.documentTypeList('person')
                 .title('Equipo')
-                .child()
-                .filter('fecTeam == true')
-                .child(S.documentTypeList('person').title('Persona')),
+                .filter('fecTeam == true'),
             ),
           S.listItem()
             .title('Reactivistas')

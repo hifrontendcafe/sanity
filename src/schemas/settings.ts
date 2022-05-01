@@ -17,14 +17,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Menu',
-      name: 'menu',
-      type: 'array',
-      description: 'Active items for top menu. Format: Label/page',
-      of: [{ type: 'string' }],
-      validation: (Rule) => Rule.unique(),
-    },
-    {
       title: 'Navbar',
       name: 'navbar',
       type: 'array',
@@ -53,13 +45,6 @@ export default {
       type: 'image',
     },
     {
-      name: 'heroBackground',
-      title: 'Hero Background',
-      type: 'image',
-      description: 'The correct resolution to upload an image is 1280x500.',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       title: 'Hero words',
       name: 'heroWords',
       type: 'array',
@@ -82,6 +67,8 @@ export default {
     },
     {
       title: 'CMYK Inscription',
+      description:
+        'Para habilitar la inscripción a CMYK, normalmente debería estar deshabilitado salvo cuando CMYK este abierto a nuevas inscripciones',
       name: 'cmykInscription',
       type: 'boolean',
       validation: (Rule) => Rule.required(),

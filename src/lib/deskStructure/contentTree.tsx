@@ -13,10 +13,6 @@ export function contentTree(S) {
             .schemaType('docs')
             .child(S.documentTypeList('docs').title('Documentos')),
           S.listItem()
-            .title('Posts')
-            .schemaType('post')
-            .child(S.documentTypeList('post').title('Posts')),
-          S.listItem()
             .title('Featured cards')
             .schemaType('featuredCards')
             .child(S.documentTypeList('featuredCards').title('Cards')),
@@ -36,13 +32,6 @@ export function contentTree(S) {
             .title('Seniorities')
             .schemaType('seniority')
             .child(S.documentTypeList('seniority').title('Seniorities')),
-
-          S.listItem()
-            .title('Canales con eventos')
-            .schemaType('eventChannel')
-            .child(
-              S.documentTypeList('eventChannel').title('Canales con eventos'),
-            ),
           S.listItem()
             .title('URLs externas')
             .schemaType('externalUrl')
