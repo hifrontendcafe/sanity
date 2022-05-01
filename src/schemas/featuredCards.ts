@@ -25,10 +25,9 @@ export default {
     },
     {
       title: 'Texto del link',
-      description: 'Texto azul que aparece abajo en la card',
+      description: 'Link azul que aparece abajo en la card',
       name: 'btnText',
       type: 'string',
-      validation: (Rule) => Rule.required(),
     },
   ],
 };
