@@ -81,6 +81,13 @@ export default {
       type: 'url',
       description: 'URL del evento grabado',
     },
+    {
+      title: 'Discord Id',
+      name: 'discordId',
+      type: 'string',
+      description: 'Id del evento en discord',
+      hidden: true,
+    },
   ],
   preview: {
     select: {
