@@ -18,10 +18,8 @@ export default {
     {
       title: 'Categoría',
       name: 'category',
-      type: 'string',
-      options: {
-        source: 'category',
-      },
+      type: 'reference',
+      to: [{ type: 'category' }],
       validation: (Rule) => Rule.required(),
     },
     {
