@@ -28,5 +28,10 @@ export default {
       name: 'content',
       type: 'markdown',
     },
+    {
+      name: 'body',
+      type: 'array',
+      of: [{ type: 'block' }],
+    },
   ],
 };
