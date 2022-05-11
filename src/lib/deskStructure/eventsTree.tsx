@@ -1,4 +1,5 @@
 import React from 'react';
+import { BsGear } from 'react-icons/bs';
 import { MdEventSeat } from 'react-icons/md';
 
 const currentDateTime = new Date().toISOString();
@@ -46,6 +47,15 @@ export function eventsTree(S) {
             .title('Tags')
             .schemaType('tag')
             .child(S.documentTypeList('tag').title('Tags de Eventos')),
+          S.listItem()
+            .title('Settings')
+            .icon(BsGear)
+            .schemaType('eventsSettings')
+            .child(
+              S.document()
+                .schemaType('eventsSettings')
+                .documentId('eventsSettings'),
+            ),
         ]),
     );
 }

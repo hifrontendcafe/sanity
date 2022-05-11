@@ -22,6 +22,7 @@ import technology from './technology';
 import role from './role';
 import seniority from './seniority';
 import eventChannels from './event-channels';
+import eventsSettings from './eventsSettings';
 import externalUrl from './externalUrl';
 import navItem from './navItem';
 import components from './components';
@@ -56,6 +57,7 @@ export default createSchema({
     page,
     technology,
     eventChannels,
+    eventsSettings,
     externalUrl,
     navItem,
   ]),
