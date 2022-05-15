@@ -34,6 +34,17 @@ export default {
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
+    {
+      title: 'Tags',
+      name: 'tags',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'tag' }],
+        },
+      ],
+    },
   ],
   preview: {
     select: {
