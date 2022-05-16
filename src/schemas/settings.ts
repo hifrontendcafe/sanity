@@ -53,6 +53,17 @@ export default {
       validation: (Rule) => Rule.unique(),
     },
     {
+      title: 'Hero Subtitle',
+      name: 'heroSubtitle',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'Hero Description',
+      name: 'heroDescription',
+      type: 'text',
+    },
+    {
       title: 'Social networks',
       name: 'socialnetworks',
       type: 'object',
