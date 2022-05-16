@@ -64,6 +64,18 @@ export default {
       type: 'text',
     },
     {
+      title: 'Discord Button Label',
+      name: 'discordButtonLabel',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'Iniciativas Button Text',
+      name: 'iniciativasButtonText',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Social networks',
       name: 'socialnetworks',
       type: 'object',
