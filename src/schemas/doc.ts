@@ -21,14 +21,9 @@ export default {
       },
       validation: (Rule) => Rule.required(),
     },
+
     {
-      title: 'Content',
-      description:
-        'Guía de markdown https://www.markdownguide.org/cheat-sheet/',
-      name: 'content',
-      type: 'markdown',
-    },
-    {
+      title: 'Contenido',
       name: 'body',
       type: 'array',
       of: [

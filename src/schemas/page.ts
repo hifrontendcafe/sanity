@@ -25,40 +25,6 @@ const seo = [
   },
 ];
 
-const components = [
-  {
-    title: 'Pasos',
-    name: 'steps',
-    group: 'components',
-    type: 'array',
-    of: [
-      {
-        type: 'object',
-        preview: {
-          select: {
-            step: 'step',
-            title: 'title',
-            subtitle: 'description',
-          },
-          prepare({ title, subtitle, step }) {
-            return {
-              title: `${step} - ${title}`,
-              subtitle,
-            };
-          },
-        },
-        title: 'Paso',
-        fields: [
-          { name: 'step', type: 'number', title: 'Paso' },
-          { name: 'title', type: 'string', title: 'Título' },
-          { name: 'description', type: 'text', title: 'Descripción' },
-        ],
-      },
-    ],
-    validation: (Rule) => Rule.max(3),
-  },
-];
-
 export default {
   title: 'Page',
   name: 'page',
@@ -96,7 +62,6 @@ export default {
       type: 'slug',
     },
     ...seo,
-    ...components,
     {
       title: 'Nombre del hero',
       name: 'hero',
