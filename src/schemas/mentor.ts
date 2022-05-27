@@ -29,6 +29,20 @@ export default {
       type: 'boolean',
     },
     {
+      title: 'Estado',
+      name: 'status',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Activo', value: 'ACTIVE' },
+          { title: 'No disponible', value: 'NOT_AVAILABLE' },
+          { title: 'Inactivo', value: 'INACTIVE' },
+          { title: 'Fuera del programa', value: 'OUT' },
+        ],
+      },
+      initialValue: 'ACTIVE',
+    },
+    {
       title: 'Photo',
       name: 'photo',
       type: 'image',
