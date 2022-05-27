@@ -34,11 +34,11 @@ export default {
       type: 'string',
       options: {
         list: [
-          {title: 'Activo', value:'ACTIVE' },
-          {title: 'No disponible', value: 'NOT_AVAILABLE'},
-          {title: 'Inactivo', value: 'INACTIVE' },
-          {title: 'Fuera del programa', value: 'OUT'},
-        ]
+          { title: 'Activo', value: 'ACTIVE' },
+          { title: 'No disponible', value: 'NOT_AVAILABLE' },
+          { title: 'Inactivo', value: 'INACTIVE' },
+          { title: 'Fuera del programa', value: 'OUT' },
+        ],
       },
       initialValue: 'ACTIVE',
     },
