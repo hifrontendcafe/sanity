@@ -78,6 +78,11 @@ export default {
       type: 'url',
     },
     {
+      title: 'Instagram',
+      name: 'instagram',
+      type: 'url',
+    },
+    {
       title: 'Team FEC',
       name: 'fecTeam',
       type: 'boolean',
