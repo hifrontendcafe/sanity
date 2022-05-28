@@ -24,11 +24,6 @@ export default {
       type: 'string',
     },
     {
-      title: 'Activo',
-      name: 'isActive',
-      type: 'boolean',
-    },
-    {
       title: 'Estado',
       name: 'status',
       type: 'string',
