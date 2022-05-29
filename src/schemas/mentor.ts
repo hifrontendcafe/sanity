@@ -5,6 +5,28 @@ export default {
   name: 'mentor',
   type: 'document',
   icon: MdSchool,
+  preview: {
+    select: {
+      title: 'name',
+      subtitle: 'status',
+      media: 'photo',
+    },
+  },
+  orderings: [
+    {
+      title: 'Status',
+      name: 'status',
+      by: [
+        { field: 'status', direction: 'asc' },
+        { field: 'name', direction: 'asc' },
+      ],
+    },
+    {
+      title: 'Name',
+      name: 'name',
+      by: [{ field: 'name', direction: 'asc' }],
+    },
+  ],
   fields: [
     {
       name: 'persona',

@@ -19,7 +19,11 @@ export function peopleTree(S) {
           S.listItem()
             .title('Mentores')
             .schemaType('mentor')
-            .child(S.documentTypeList('mentor').title('Mentores')),
+            .child(
+              S.documentTypeList('mentor')
+                .title('Mentores')
+                .defaultOrdering([{ field: 'status', direction: 'asc' }]),
+            ),
           S.listItem()
             .title('Perfiles')
             .schemaType('profile')
