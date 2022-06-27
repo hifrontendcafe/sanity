@@ -90,11 +90,27 @@ export default {
     },
     {
       title: 'CMYK Inscription',
-      description:
-        'Para habilitar la inscripción a CMYK, normalmente debería estar deshabilitado salvo cuando CMYK este abierto a nuevas inscripciones',
-      name: 'cmykInscription',
-      type: 'boolean',
-      validation: (Rule) => Rule.required(),
-    },
+      description: "Configuraciones para todo lo relacionado a CMYK",
+      name: "cmykSettings",
+      type: 'object',
+      fields: [
+        {
+          title: 'CMYK Inscription',
+          description:
+            'Para habilitar la inscripción a CMYK, normalmente debería estar deshabilitado salvo cuando CMYK este abierto a nuevas inscripciones',
+          name: 'cmykInscription',
+          type: 'boolean',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: 'CMYK Inscription Chix',
+          description:
+            'Para habilitar la inscripción a CMYK exclusivo para chixs.',
+          name: 'cmykInscriptionChix',
+          type: 'boolean',
+          validation: (Rule) => Rule.required(),
+        },
+      ]
+    }
   ],
 };

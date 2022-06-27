@@ -12,6 +12,27 @@ const withConfig = (config) => {
     : sanityClient;
 };
 
+const workExperienceLabels = {
+  "level0": "Hasta 6 meses",
+  "level1": "Entre 6 meses y 1 año",
+  "level2": "Más de un año",
+  "level3": "Hasta 1 año",
+  "level4": "Entre 1 año y 3 años",
+  "level5": "Más de 3 años",
+}
+
+const stackWantedLabels = {
+  "front": "Frontend (React)",
+  "back": "Backend (Node/Express)",
+  "both": "Ambos",
+}
+
+const projectsLabels = {
+  "flashcards": "App Flashcards",
+  "callForPapers": "App Administrador call for papars",
+  "both": "No tengo preferencias",
+}
+
 class CMYKParticipationDatatable extends React.Component {
   state = {
     loading: true,
@@ -26,7 +47,7 @@ class CMYKParticipationDatatable extends React.Component {
   getCMYKParticipants = (cmykVer = 4) => {
     withConfig({ apiVersion: 'v1' })
       .fetch(
-        `*[_type == "cmykParticipant" &&  cmykVersion == "${cmykVer}"] { _createdAt, "discordUser": discordUser->username, "email": discordUser->email, aboutParticipant, "timezone":discordUser->timezone, experience, timeAvailability, otherQuestions, participationLevel, previousKnowledge, status}`,
+        `*[_type == "cmykParticipant" &&  cmykVersion == "${cmykVer}"] { _createdAt, "discordUser": discordUser->username, "email": discordUser->email, aboutParticipant, "timezone":discordUser->timezone, participationType, isChix, workExperience, stackWanted, projects, experience, timeAvailability, otherQuestions, previousKnowledge, status}`,
         {},
       )
       .then((cmykPart) => {
@@ -96,24 +117,39 @@ class CMYKParticipationDatatable extends React.Component {
         },
       },
       {
-        name: 'experience',
-        label: 'Experiencia',
+        name: 'participationType',
+        label: 'Form',
         options: {
           filter: true,
           sort: true,
-          customBodyRender: (value) => (value === 'yes' ? 'Sí' : 'No'),
+          customBodyRender: (value) => (value === 'lider' ? 'Líder' : 'Participante'),
         },
       },
       {
-        name: 'participationLevel',
-        label: 'Nivel de Participación',
+        name: 'workExperience',
+        label: 'Experiencia Laboral',
         options: {
           filter: true,
           sort: true,
-          customBodyRender: (value) =>
-            value === 'level1'
-              ? 'Nivel 1 (HTML - CSS - JS)'
-              : 'Nivel 2 (ReactJS - CSS a elección)',
+          customBodyRender: (value) => (workExperienceLabels[value]),
+        },
+      },
+      {
+        name: 'stackWanted',
+        label: 'Front o Back',
+        options: {
+          filter: true,
+          sort: true,
+          customBodyRender: (value) => (stackWantedLabels[value]),
+        },
+      },
+      {
+        name: 'projects',
+        label: 'Proyecto',
+        options: {
+          filter: true,
+          sort: true,
+          customBodyRender: (value) => (projectsLabels[value]),
         },
       },
       {
@@ -158,6 +194,7 @@ class CMYKParticipationDatatable extends React.Component {
               <option value="2">CMYK v2.0</option>
               <option value="3">CMYK v3.0</option>
               <option value="4">CMYK v4.0</option>
+              <option value="5">CMYK v5.0</option>
             </NativeSelect>
           </FormControl>
           <img src={pepeJedi} alt="jedi pepe" width="40px" height="40px" />
