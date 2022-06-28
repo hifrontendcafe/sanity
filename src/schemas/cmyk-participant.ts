@@ -15,7 +15,7 @@ export default {
     },
     {
       title: 'Tipo de participación',
-      name: 'participationType',
+      name: 'formType',
       type: 'string',
       options: {
         list: [
