@@ -37,7 +37,7 @@ class CMYKParticipationDatatable extends React.Component {
   state = {
     loading: true,
     cmykParticipantsList: [],
-    cmykVersion: '4',
+    cmykVersion: '5',
   };
 
   componentDidMount() {
@@ -104,8 +104,8 @@ class CMYKParticipationDatatable extends React.Component {
             value === '>2<4hours'
               ? 'Entre 2 y 4 horas'
               : value === '>4<6hours'
-              ? 'Entre 4 y 6 horas'
-              : 'Más de 6 horas',
+                ? 'Entre 4 y 6 horas'
+                : 'Más de 6 horas',
         },
       },
       {
