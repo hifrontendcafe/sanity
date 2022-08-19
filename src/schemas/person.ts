@@ -1,5 +1,6 @@
 import { BiUserCircle } from 'react-icons/bi';
 import { timezones } from '../lib/timezones';
+import { v4 as uuidv4 } from 'uuid';
 
 export default {
   name: 'person',
@@ -81,6 +82,39 @@ export default {
       title: 'Instagram',
       name: 'instagram',
       type: 'url',
+    },
+    {
+      title: 'Certificaciones',
+      name: 'certifications',
+      type: 'array',
+      of: [
+        {
+          title: 'Certificado',
+          type: 'object',
+          fields: [
+            {
+              title: 'ID del certificado',
+              name: 'certificationId',
+              type: 'string',
+              initialValue: uuidv4(),
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              title: 'Certificado',
+              name: 'certificate',
+              type: 'reference',
+              to: [{ type: 'fec-certificate' }],
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+          preview: {
+            select: {
+              title: 'certificate.title',
+              media: 'certificate.logo',
+            },
+          },
+        },
+      ],
     },
     {
       title: 'Team FEC',

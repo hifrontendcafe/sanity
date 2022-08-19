@@ -26,6 +26,7 @@ import eventsSettings from './eventsSettings';
 import externalUrl from './externalUrl';
 import navItem from './navItem';
 import components from './components';
+import fecCertificate from './fec-certificate';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -60,5 +61,6 @@ export default createSchema({
     eventsSettings,
     externalUrl,
     navItem,
+    fecCertificate,
   ]),
 });
