@@ -40,6 +40,10 @@ export function contentTree(S) {
             .title('Nav items')
             .schemaType('navItem')
             .child(S.documentTypeList('navItem').title('Nav Items')),
+          S.listItem()
+            .title('Certificados')
+            .schemaType('fec-certificate')
+            .child(S.documentTypeList('fec-certificate').title('Certificado')),
         ]),
     );
 }
