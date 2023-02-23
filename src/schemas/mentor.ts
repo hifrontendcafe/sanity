@@ -99,6 +99,11 @@ export default {
       type: 'url',
     },
     {
+      title: 'Twitter',
+      name: 'twitter',
+      type: 'url',
+    },
+    {
       title: 'Temas',
       name: 'topics',
       type: 'array',
