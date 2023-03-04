@@ -44,6 +44,7 @@ export default {
       title: 'Descripcion',
       name: 'description',
       type: 'string',
+      validation: (Rule) => Rule.max(280),
     },
     {
       title: 'Estado',
