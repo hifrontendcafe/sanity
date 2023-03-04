@@ -3,6 +3,7 @@ name: Sanity CI
 on:
   push:
     branches: [ master ]
+  pull_request:
 
 jobs:
   deploy:
@@ -19,7 +20,7 @@ jobs:
         run: yarn --frozen-lockfile
 
       - name: Install Sanity CLI
-        run: yarn global add @sanity/cli
+        run: npm i -g @sanity/cli
 
       - name: Deploy Sanity
         run: SANITY_AUTH_TOKEN="${{ secrets.SANITY_AUTH_TOKEN }}" yarn sanity deploy
