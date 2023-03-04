@@ -1,0 +1,25 @@
+name: Sanity CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+
+      - name: Install Dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Install Sanity CLI
+        run: yarn global add @sanity/cli
+
+      - name: Deploy Sanity
+        run: SANITY_AUTH_TOKEN="${{ secrets.SANITY_AUTH_TOKEN }}" yarn sanity deploy
