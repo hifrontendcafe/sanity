@@ -1,14 +1,20 @@
-import { defineConfig } from 'sanity';
+import { visionTool } from '@sanity/vision';
+import { defineConfig, isDev } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import Logo from './src/components/Logo';
 import deskStructure from './src/lib/deskStructure';
 import schemas from './src/schemas/schema';
 
+const devOnlyPlugins = [visionTool()];
+
 export default defineConfig({
   title: 'FEC',
   projectId: '0mjeop5f',
   dataset: 'production',
-  plugins: [deskTool({ structure: deskStructure })],
+  plugins: [
+    deskTool({ structure: deskStructure }),
+    ...(isDev ? devOnlyPlugins : []),
+  ],
   schema: { types: schemas },
   studio: { components: { logo: Logo } },
   document: {
