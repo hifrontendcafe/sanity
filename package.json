@@ -5,8 +5,9 @@
   "author": "Martin Bavio <mbavio@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "dev": "sanity dev",
     "start": "sanity start",
-    "test": "sanity check"
+    "build": "sanity build"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.3",
