@@ -1,15 +1,11 @@
 import { FormControl, NativeSelect } from '@material-ui/core';
-import { createClient } from '@sanity/client';
 import { Spinner } from '@sanity/ui';
 import MUIDataTable from 'mui-datatables';
 import React from 'react';
+import { clientPreConfig } from '../../sanity.client';
 import pepeJedi from './assets/images/pepe-jedi.gif';
 
-const client = createClient({
-  dataset: 'production',
-  projectId: '0mjeop5f',
-  apiVersion: 'v1',
-});
+const client = clientPreConfig({ apiVersion: 'v1' });
 
 const workExperienceLabels = {
   level0: 'Hasta 6 meses',

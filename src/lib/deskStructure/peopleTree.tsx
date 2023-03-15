@@ -2,7 +2,9 @@ import { BsFillPeopleFill } from 'react-icons/bs';
 import { GiUnicorn } from 'react-icons/gi';
 import { GoProject } from 'react-icons/go';
 import { StructureBuilder } from 'sanity/desk';
-import { client } from './index';
+import { clientPreConfig } from '../../../sanity.client';
+
+export const client = clientPreConfig({ apiVersion: '2022-01-22' });
 
 export function peopleTree(S: StructureBuilder) {
   return S.listItem()

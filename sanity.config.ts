@@ -4,6 +4,7 @@ import { visionTool } from '@sanity/vision';
 import { defineConfig, definePlugin, isDev } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import CMYKParticipationDatatable from './plugins/cmyk-participation-datatable';
+import { projectId, title } from './sanity.env';
 import Logo from './src/components/Logo';
 import deskStructure from './src/lib/deskStructure';
 import schemas from './src/schemas/schema';
@@ -44,18 +45,18 @@ const sharedConfig = definePlugin({
 export default defineConfig([
   {
     name: 'production-workspace',
-    title: 'FEC',
+    title,
     subtitle: 'Production',
-    projectId: '0mjeop5f',
+    projectId,
     dataset: 'production',
     basePath: '/production',
     plugins: [sharedConfig()],
   },
   {
     name: 'development-workspace',
-    title: 'FEC',
+    title,
     subtitle: 'Development',
-    projectId: '0mjeop5f',
+    projectId,
     dataset: 'develop',
     basePath: '/development',
     plugins: [sharedConfig()],
