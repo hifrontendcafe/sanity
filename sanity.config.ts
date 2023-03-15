@@ -1,7 +1,9 @@
 import { colorInput } from '@sanity/color-input';
+import { dashboardTool } from '@sanity/dashboard';
 import { visionTool } from '@sanity/vision';
 import { defineConfig, definePlugin, isDev } from 'sanity';
 import { deskTool } from 'sanity/desk';
+import CMYKParticipationDatatable from './plugins/cmyk-participation-datatable';
 import Logo from './src/components/Logo';
 import deskStructure from './src/lib/deskStructure';
 import schemas from './src/schemas/schema';
@@ -13,6 +15,7 @@ const sharedConfig = definePlugin({
   plugins: [
     deskTool({ structure: deskStructure }),
     colorInput(),
+    dashboardTool({ widgets: [CMYKParticipationDatatable] }),
     ...(isDev ? devOnlyPlugins : []),
   ],
   schema: { types: schemas },
