@@ -1,3 +1,4 @@
+import { colorInput } from '@sanity/color-input';
 import { visionTool } from '@sanity/vision';
 import { defineConfig, definePlugin, isDev } from 'sanity';
 import { deskTool } from 'sanity/desk';
@@ -11,6 +12,7 @@ const sharedConfig = definePlugin({
   name: 'shareConfig',
   plugins: [
     deskTool({ structure: deskStructure }),
+    colorInput(),
     ...(isDev ? devOnlyPlugins : []),
   ],
   schema: { types: schemas },
