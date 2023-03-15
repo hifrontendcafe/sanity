@@ -999,7 +999,7 @@
     get-it "^8.0.9"
     pkg-dir "^5.0.0"
 
-"@sanity/client@^5.2.0":
+"@sanity/client@^5.2.0", "@sanity/client@^5.3.0":
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/@sanity/client/-/client-5.3.0.tgz#10a3ec770c5c17acf19c18c0f5354a1b7ab869af"
   integrity sha512-GUu33gDy5Lx9FNyRGeRNrn2ZYNNthn3Qj2y4GPtb3MkdUtdWHKXmCi3S7nqusTshwS0Uz/w+wX9/h5Nbq9iofg==
