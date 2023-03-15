@@ -54,9 +54,11 @@ export function peopleTree(S: StructureBuilder) {
                 .child(async (id) => {
                   const reactGroup = await client.fetch(`*[_id == "${id}"][0]`);
 
-                  const personIds = reactGroup.participants.map(
+                  const personIds =
+                    reactGroup.participants?.map(
                       (participant) => participant._ref,
-                  );
+                    ) || [];
+
                   personIds.push(reactGroup.teamCaptain._ref);
 
                   return S.documentTypeList('person')
