@@ -2,7 +2,6 @@ export default {
   name: 'settings',
   title: 'Site Settings',
   type: 'document',
-  __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
   fields: [
     {
       name: 'title',
@@ -90,8 +89,8 @@ export default {
     },
     {
       title: 'CMYK Inscription',
-      description: "Configuraciones para todo lo relacionado a CMYK",
-      name: "cmykSettings",
+      description: 'Configuraciones para todo lo relacionado a CMYK',
+      name: 'cmykSettings',
       type: 'object',
       fields: [
         {
@@ -110,7 +109,7 @@ export default {
           type: 'boolean',
           validation: (Rule) => Rule.required(),
         },
-      ]
-    }
+      ],
+    },
   ],
 };
