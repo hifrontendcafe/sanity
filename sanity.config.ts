@@ -1,5 +1,5 @@
 import { visionTool } from '@sanity/vision';
-import { defineConfig, isDev } from 'sanity';
+import { defineConfig, definePlugin, isDev } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import Logo from './src/components/Logo';
 import deskStructure from './src/lib/deskStructure';
@@ -7,10 +7,8 @@ import schemas from './src/schemas/schema';
 
 const devOnlyPlugins = [visionTool()];
 
-export default defineConfig({
-  title: 'FEC',
-  projectId: '0mjeop5f',
-  dataset: 'production',
+const sharedConfig = definePlugin({
+  name: 'shareConfig',
   plugins: [
     deskTool({ structure: deskStructure }),
     ...(isDev ? devOnlyPlugins : []),
@@ -37,3 +35,24 @@ export default defineConfig({
     },
   },
 });
+
+export default defineConfig([
+  {
+    name: 'production-workspace',
+    title: 'FEC',
+    subtitle: 'Production',
+    projectId: '0mjeop5f',
+    dataset: 'production',
+    basePath: '/production',
+    plugins: [sharedConfig()],
+  },
+  {
+    name: 'development-workspace',
+    title: 'FEC',
+    subtitle: 'Development',
+    projectId: '0mjeop5f',
+    dataset: 'develop',
+    basePath: '/development',
+    plugins: [sharedConfig()],
+  },
+]);
