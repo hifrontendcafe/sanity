@@ -31,15 +31,16 @@ export default {
       type: 'text',
       validation: (Rule) => Rule.required(),
     },
-    {
-      name: 'color',
-      title: 'Color',
-      type: 'color',
-      validation: (Rule) => Rule.required(),
-      options: {
-        disableAlpha: true,
-      },
-    },
+    // FIXME: Unknown type: color.
+    // {
+    //   name: 'color',
+    //   title: 'Color',
+    //   type: 'color',
+    //   validation: (Rule) => Rule.required(),
+    //   options: {
+    //     disableAlpha: true,
+    //   },
+    // },
     {
       name: 'github',
       title: 'Github',
