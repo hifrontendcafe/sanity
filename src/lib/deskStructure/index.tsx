@@ -1,4 +1,5 @@
 import { StructureBuilder } from 'sanity/desk';
+import assetsTree from './assetsTree';
 import { contentTree } from './contentTree';
 import { eventsTree } from './eventsTree';
 import { initiativesTree } from './initiativesTree';
@@ -15,7 +16,6 @@ export default (S: StructureBuilder) =>
       eventsTree(S),
       initiativesTree(S),
       contentTree(S),
-      // FIXME: Schema types and IDs issues with the assets tree.
-      // assetsTree,
+      assetsTree(S),
       // ...S.documentTypeListItems(),
     ]);
