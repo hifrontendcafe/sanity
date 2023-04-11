@@ -1,6 +1,7 @@
-const title = 'FEC';
-const dataset = 'production';
-const projectId = '0mjeop5f';
-const apiVersion = new Date().toLocaleDateString('fr-CA'); // Expects `1` or date in format `YYYY-MM-DD`;
+const dataset = process.env.SANITY_STUDIO_DATASET || 'production';
+const projectId = process.env.SANITY_STUDIO_PROJECT_ID || '0mjeop5f';
 
-export { title, dataset, projectId, apiVersion };
+const YYYY_MM_DD = new Date().toLocaleDateString('fr-CA');
+const apiVersion = process.env.SANITY_STUDIO_API_VERSION || YYYY_MM_DD;
+
+export { dataset, projectId, apiVersion };

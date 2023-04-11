@@ -1,15 +1,15 @@
 import { colorInput } from '@sanity/color-input';
 import { dashboardTool } from '@sanity/dashboard';
 import { visionTool } from '@sanity/vision';
-import { defineConfig, definePlugin, isDev } from 'sanity';
+import { WorkspaceOptions, defineConfig, definePlugin, isDev } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import CMYKParticipationDatatable from './plugins/cmyk-participation-datatable';
-import { projectId, title } from './sanity.env';
+import { projectId } from './sanity.env';
 import Logo from './src/components/Logo';
 import deskStructure from './src/lib/deskStructure';
 import schemas from './src/schemas/schema';
 
-const devOnlyPlugins = [visionTool()];
+const devOnlyPlugins = isDev ? [visionTool()] : [];
 
 const sharedConfig = definePlugin({
   name: 'shareConfig',
@@ -17,7 +17,7 @@ const sharedConfig = definePlugin({
     deskTool({ structure: deskStructure }),
     colorInput(),
     dashboardTool({ widgets: [CMYKParticipationDatatable] }),
-    ...(isDev ? devOnlyPlugins : []),
+    ...devOnlyPlugins,
   ],
   schema: { types: schemas },
   studio: { components: { logo: Logo } },
@@ -42,23 +42,25 @@ const sharedConfig = definePlugin({
   },
 });
 
-export default defineConfig([
-  {
-    name: 'production-workspace',
-    title,
-    subtitle: 'Production',
-    projectId,
-    dataset: 'production',
-    basePath: '/production',
-    plugins: [sharedConfig()],
-  },
-  {
-    name: 'development-workspace',
-    title,
-    subtitle: 'Development',
-    projectId,
-    dataset: 'develop',
-    basePath: '/development',
-    plugins: [sharedConfig()],
-  },
-]);
+const devWorkspace: WorkspaceOptions = {
+  name: 'development-workspace',
+  title: `FEC - Development`,
+  subtitle: 'Development',
+  projectId,
+  dataset: 'develop',
+  basePath: '/development',
+  plugins: [sharedConfig()],
+};
+const prodWorkspace: WorkspaceOptions = {
+  name: 'production-workspace',
+  title: `FEC ${isDev ? '- Production' : ''}`,
+  subtitle: 'Production',
+  projectId,
+  dataset: 'production',
+  basePath: '/production',
+  plugins: [sharedConfig()],
+};
+
+const workspaces = isDev ? [devWorkspace, prodWorkspace] : [prodWorkspace];
+
+export default defineConfig(workspaces);
