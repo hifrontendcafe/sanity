@@ -8,41 +8,34 @@ import { columns } from './datatable-columns';
 import { options } from './datatable-options';
 import datatableTheme from './datatable-theme';
 
+const currentCMYKVersion: number = 5;
 const client = clientPreConfig({ apiVersion: 'v1' });
 
 function CMYKParticipationDatatable() {
-  const [{ cmykParticipantsList, cmykVersion, loading }, setState] = useState({
-    cmykParticipantsList: [],
-    cmykVersion: '5',
+  const [{ participantsList, cmykVersion, loading }, setState] = useState({
+    participantsList: [],
+    cmykVersion: currentCMYKVersion.toString(),
     loading: true,
   });
 
-  const getCMYKParticipants = (cmykVer: string) => {
-    const cmkykQuery = `*[_type == "cmykParticipant" &&  cmykVersion == "${cmykVer}"] { _createdAt, "discordUser": discordUser->username, "email": discordUser->email, aboutParticipant, "timezone":discordUser->timezone, participationType, isChix, workExperience, stackWanted, projects, experience, timeAvailability, otherQuestions, previousKnowledge, status}`;
+  useEffect(() => {
+    const cmkykQuery = `*[_type == "cmykParticipant" &&  cmykVersion == "${cmykVersion}"] { _createdAt, "discordUser": discordUser->username, "email": discordUser->email, aboutParticipant, "timezone":discordUser->timezone, participationType, isChix, workExperience, stackWanted, projects, experience, timeAvailability, otherQuestions, previousKnowledge, status}`;
 
-    client.fetch(cmkykQuery, {}).then((cmykPart) => {
+    client.fetch(cmkykQuery, {}).then((participantsList) => {
       setState((prevState) => ({
         ...prevState,
-        cmykParticipantsList: cmykPart,
+        participantsList,
         loading: false,
       }));
     });
-  };
-
-  useEffect(() => {
-    getCMYKParticipants(cmykVersion);
-  }, []);
+  }, [cmykVersion]);
 
   const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const { value } = e.target;
-
     setState((prevState) => ({
       ...prevState,
-      cmykVersion: value,
+      cmykVersion: e.target.value,
       loading: true,
     }));
-
-    getCMYKParticipants(value);
   };
 
   return !loading ? (
@@ -50,7 +43,7 @@ function CMYKParticipationDatatable() {
       <MUIDataTable
         title="CMYK | Lista de Participantes"
         columns={columns}
-        data={cmykParticipantsList}
+        data={participantsList}
         options={{
           ...options,
           customToolbar: () => (
@@ -61,8 +54,8 @@ function CMYKParticipationDatatable() {
                 name="cmykVersion"
                 aria-label="cmykVersion"
               >
-                {[...Array(+cmykVersion)].map((_, i) => (
-                  <option value={i + 1}>CMYK v{i + 1}.0</option>
+                {[...Array(currentCMYKVersion)].map((_, i) => (
+                  <option key={i} value={i + 1}>{`CMYK v${i + 1}.0`}</option>
                 ))}
               </Select>
 
