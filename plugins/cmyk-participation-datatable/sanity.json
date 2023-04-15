@@ -1,9 +1,0 @@
-{
-  "parts": [
-    {
-      "name": "part:@sanity/dashboard/widget/cmyk-participation-datatable",
-      "implements": "part:@sanity/dashboard/widget",
-      "path": "index"
-    }
-  ]
-}

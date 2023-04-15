@@ -1,37 +1,32 @@
-import React from 'react';
-import MUIDataTable from 'mui-datatables';
-import styles from './Styles.css';
-import sanityClient from 'part:@sanity/base/client';
-import Spinner from 'part:@sanity/components/loading/spinner';
 import { FormControl, NativeSelect } from '@material-ui/core';
+import { Spinner } from '@sanity/ui';
+import MUIDataTable from 'mui-datatables';
+import React from 'react';
+import { clientPreConfig } from '../../sanity.client';
 import pepeJedi from './assets/images/pepe-jedi.gif';
 
-const withConfig = (config) => {
-  return typeof sanityClient.withConfig === 'function'
-    ? sanityClient.withConfig(config)
-    : sanityClient;
-};
+const client = clientPreConfig({ apiVersion: 'v1' });
 
 const workExperienceLabels = {
-  "level0": "Hasta 6 meses",
-  "level1": "Entre 6 meses y 1 año",
-  "level2": "Más de un año",
-  "level3": "Hasta 1 año",
-  "level4": "Entre 1 año y 3 años",
-  "level5": "Más de 3 años",
-}
+  level0: 'Hasta 6 meses',
+  level1: 'Entre 6 meses y 1 año',
+  level2: 'Más de un año',
+  level3: 'Hasta 1 año',
+  level4: 'Entre 1 año y 3 años',
+  level5: 'Más de 3 años',
+};
 
 const stackWantedLabels = {
-  "front": "Frontend (React)",
-  "back": "Backend (Node/Express)",
-  "both": "Ambos",
-}
+  front: 'Frontend (React)',
+  back: 'Backend (Node/Express)',
+  both: 'Ambos',
+};
 
 const projectsLabels = {
-  "flashcards": "App Flashcards",
-  "callForPapers": "App Administrador call for papars",
-  "both": "No tengo preferencias",
-}
+  flashcards: 'App Flashcards',
+  callForPapers: 'App Administrador call for papars',
+  both: 'No tengo preferencias',
+};
 
 class CMYKParticipationDatatable extends React.Component {
   state = {
@@ -45,7 +40,7 @@ class CMYKParticipationDatatable extends React.Component {
   }
 
   getCMYKParticipants = (cmykVer = 4) => {
-    withConfig({ apiVersion: 'v1' })
+    client
       .fetch(
         `*[_type == "cmykParticipant" &&  cmykVersion == "${cmykVer}"] { _createdAt, "discordUser": discordUser->username, "email": discordUser->email, aboutParticipant, "timezone":discordUser->timezone, participationType, isChix, workExperience, stackWanted, projects, experience, timeAvailability, otherQuestions, previousKnowledge, status}`,
         {},
@@ -104,8 +99,8 @@ class CMYKParticipationDatatable extends React.Component {
             value === '>2<4hours'
               ? 'Entre 2 y 4 horas'
               : value === '>4<6hours'
-                ? 'Entre 4 y 6 horas'
-                : 'Más de 6 horas',
+              ? 'Entre 4 y 6 horas'
+              : 'Más de 6 horas',
         },
       },
       {
@@ -122,7 +117,8 @@ class CMYKParticipationDatatable extends React.Component {
         options: {
           filter: true,
           sort: true,
-          customBodyRender: (value) => (value === 'lider' ? 'Líder' : 'Participante'),
+          customBodyRender: (value) =>
+            value === 'lider' ? 'Líder' : 'Participante',
         },
       },
       {
@@ -131,7 +127,7 @@ class CMYKParticipationDatatable extends React.Component {
         options: {
           filter: true,
           sort: true,
-          customBodyRender: (value) => (workExperienceLabels[value]),
+          customBodyRender: (value) => workExperienceLabels[value],
         },
       },
       {
@@ -140,7 +136,7 @@ class CMYKParticipationDatatable extends React.Component {
         options: {
           filter: true,
           sort: true,
-          customBodyRender: (value) => (stackWantedLabels[value]),
+          customBodyRender: (value) => stackWantedLabels[value],
         },
       },
       {
@@ -149,7 +145,7 @@ class CMYKParticipationDatatable extends React.Component {
         options: {
           filter: true,
           sort: true,
-          customBodyRender: (value) => (projectsLabels[value]),
+          customBodyRender: (value) => projectsLabels[value],
         },
       },
       {
@@ -241,7 +237,8 @@ class CMYKParticipationDatatable extends React.Component {
     };
 
     return (
-      <div className={styles.container}>
+      <div>
+        {/* TODO: Use components from '@sanity/ui' | https://www.sanity.io/ui */}
         {!this.state.loading ? (
           <MUIDataTable
             title="CMYK | Lista de Participantes"
@@ -250,7 +247,10 @@ class CMYKParticipationDatatable extends React.Component {
             options={options}
           />
         ) : (
-          <Spinner center message="Cargando..." />
+          <div>
+            <Spinner />
+            <p>Cargando...</p>
+          </div>
         )}
       </div>
     );

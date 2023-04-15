@@ -1,8 +1,9 @@
 import { FaPeopleCarry } from 'react-icons/fa';
 import { GiTeacher } from 'react-icons/gi';
 import { IoIosColorFilter } from 'react-icons/io';
+import { StructureBuilder } from 'sanity/desk';
 
-export function initiativesTree(S) {
+export function initiativesTree(S: StructureBuilder) {
   return S.listItem()
     .title('Iniciativas')
     .icon(FaPeopleCarry)
