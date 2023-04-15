@@ -1,9 +1,12 @@
 import { BsFillPeopleFill } from 'react-icons/bs';
-import { GoProject } from 'react-icons/go';
 import { GiUnicorn } from 'react-icons/gi';
-import { client } from './index';
+import { GoProject } from 'react-icons/go';
+import { StructureBuilder } from 'sanity/desk';
+import { clientPreConfig } from '../../../sanity.client';
 
-export function peopleTree(S) {
+export const client = clientPreConfig({ apiVersion: '2022-01-22' });
+
+export function peopleTree(S: StructureBuilder) {
   return S.listItem()
     .title('Personas')
     .icon(BsFillPeopleFill)
@@ -53,9 +56,11 @@ export function peopleTree(S) {
                 .child(async (id) => {
                   const reactGroup = await client.fetch(`*[_id == "${id}"][0]`);
 
-                  const personIds = reactGroup.participants.map(
-                    (participant) => participant._ref,
-                  );
+                  const personIds =
+                    reactGroup.participants?.map(
+                      (participant) => participant._ref,
+                    ) || [];
+
                   personIds.push(reactGroup.teamCaptain._ref);
 
                   return S.documentTypeList('person')

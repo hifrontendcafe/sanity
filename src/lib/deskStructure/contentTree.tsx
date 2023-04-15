@@ -1,6 +1,7 @@
 import { BsBookHalf } from 'react-icons/bs';
+import { StructureBuilder } from 'sanity/desk';
 
-export function contentTree(S) {
+export function contentTree(S: StructureBuilder) {
   return S.listItem()
     .title('Contenido')
     .icon(BsBookHalf)

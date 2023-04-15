@@ -8,11 +8,7 @@ import { columns } from './datatable-columns';
 import { options } from './datatable-options';
 import datatableTheme from './datatable-theme';
 
-const withConfig = (config) => {
-  return typeof sanityClient.withConfig === 'function'
-    ? sanityClient.withConfig(config)
-    : sanityClient;
-};
+const client = clientPreConfig({ apiVersion: 'v1' });
 
 function CMYKParticipationDatatable() {
   const [{ cmykParticipantsList, cmykVersion, loading }, setState] = useState({

@@ -1,10 +1,10 @@
-import React from 'react';
 import { BsGear } from 'react-icons/bs';
 import { MdEventSeat } from 'react-icons/md';
+import { StructureBuilder } from 'sanity/desk';
 
 const currentDateTime = new Date().toISOString();
 
-export function eventsTree(S) {
+export function eventsTree(S: StructureBuilder) {
   return S.listItem()
     .title('Eventos')
     .icon(MdEventSeat)
